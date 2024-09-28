@@ -46,6 +46,14 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
+    <configuration name="独立播放器" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../游戏成品/Fill National Flag\Fill National Flag.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="E:\Projects\游戏成品\Fill National Flag" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="单元测试(批处理模式)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Environments\UnityEditor\2022.3.34f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;E:\Projects\UnityProjects\Fill National Flag&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -85,7 +93,7 @@
       <updated>1723479171666</updated>
       <workItem from="1723479177084" duration="156000" />
       <workItem from="1727450900127" duration="1994000" />
-      <workItem from="1727479182096" duration="7600000" />
+      <workItem from="1727479182096" duration="9738000" />
     </task>
     <servers />
   </component>

@@ -1553,7 +1553,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u79FB\u52A8\uFF1A\nwsad\u4E0A\u4E0B\u5DE6\u53F3\u79FB\u52A8\n\n\u63ED\u5F00\u56FE\u7247\uFF1A\nf\n\n\u5168\u5C4F\u5207\u6362\uFF1Af11
-    / f4 / alt + enter\n\u6682\u505C\uFF1Aesc / p"
+    / f4 / alt + enter\n\u6682\u505C\uFF1Aesc / p\n\u5728\u9650\u5236\u65F6\u95F4\u5185\u63ED\u5F00\u6240\u6709\u56FE\u7247\u5427wink~"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dee44211f7fa5c9468226f4449f5168f, type: 2}
   m_sharedMaterial: {fileID: -7239248544062715978, guid: dee44211f7fa5c9468226f4449f5168f, type: 2}

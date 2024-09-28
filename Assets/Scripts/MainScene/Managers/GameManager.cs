@@ -33,10 +33,28 @@ namespace MainScene.Managers
         public Vector3Int PuzzlePoint { get; set; }
 
         public int Count { get; set; }
+        
+        // 时间限制
+        public float timeLimit;
 
+        public float Timer { get; set; }
         // 已填充
         private List<int> _puzzleFilled = new List<int>();
 
+        private void Awake()
+        {
+            Instance = this;
+            Application.targetFrameRate = 144;
+            Count = 25;
+            Timer = 0f;
+        }
+
+        private void Update()
+        {
+            HandleInput();
+            HandleTime();
+        }
+        
         /// <summary>
         /// 显示瓦片地图
         /// </summary>
@@ -54,18 +72,13 @@ namespace MainScene.Managers
             if (Count == 0)
             {
                 UIManager.Instance.ShowWin();
-                Time.timeScale = 0f;
             }
         }
 
-        private void Awake()
-        {
-            Instance = this;
-            Application.targetFrameRate = 144;
-            Count = 25;
-        }
-
-        private void Update()
+        /// <summary>
+        /// 处理用户按键
+        /// </summary>
+        private void HandleInput()
         {
             // 全屏切换
             if (Input.GetKeyDown(KeyCode.F11) || Input.GetKeyDown(KeyCode.F4))
@@ -80,6 +93,19 @@ namespace MainScene.Managers
             else if (Input.GetKeyDown(KeyCode.F))
             {
                 ShowTile();
+            }
+        }
+
+        /// <summary>
+        /// 处理时间限制
+        /// </summary>
+        private void HandleTime()
+        {
+            Timer += Time.deltaTime;
+            //Debug.Log(Timer);
+            if (Timer > timeLimit)
+            {
+                UIManager.Instance.ShowWin(false);
             }
         }
     }

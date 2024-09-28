@@ -17,13 +17,23 @@ namespace MainScene.Managers
     {
         // 单例
         public static UIManager Instance;
-        
+
         // 暂停面板
         public GameObject panelPause;
+
         // 计数
         public TMP_Text textCount;
+
         // 胜利面板
         public GameObject panelWin;
+
+        public TMP_Text textWin;
+
+        // 计时文字
+        public TMP_Text textRestTime;
+        
+        // 剩余时间
+        private string _restTime;
 
         private void Awake()
         {
@@ -31,6 +41,18 @@ namespace MainScene.Managers
             textCount.text = "剩余图片等待揭开：25";
             panelPause.SetActive(false);
             panelWin.SetActive(false);
+        }
+
+        private void Start()
+        {
+            _restTime = $"{GameManager.Instance.timeLimit:F2}";
+            textRestTime.text = $"剩余时间：{_restTime}秒";
+        }
+
+        private void Update()
+        {
+            _restTime = $"{(GameManager.Instance.timeLimit - GameManager.Instance.Timer):F2}";
+            textRestTime.text = $"剩余时间：{_restTime}秒";
         }
 
         /// <summary>
@@ -79,6 +101,7 @@ namespace MainScene.Managers
         {
             SceneManager.LoadScene(1);
             Time.timeScale = 1f;
+            GameManager.Instance.Timer = 0f;
         }
 
         /// <summary>
@@ -88,12 +111,23 @@ namespace MainScene.Managers
         {
             textCount.text = "剩余图片等待揭开：" + GameManager.Instance.Count;
         }
-        
+
         /// <summary>
-        /// 胜利
+        /// 胜利/失败
         /// </summary>
-        public void ShowWin()
+        /// <param name="winStatus">是否胜利</param>
+        public void ShowWin(bool winStatus = true)
         {
+            Time.timeScale = 0f;
+            if (winStatus)
+            {
+                textWin.text = "<color=#59C845>你成功揭开了所有图片，Nice！</color>";
+            }
+            else
+            {
+                textWin.text = "<color=#C84551>唔哇，时间到了，再来一次吧(wink~)</color>";
+            }
+
             panelWin.SetActive(true);
         }
     }
