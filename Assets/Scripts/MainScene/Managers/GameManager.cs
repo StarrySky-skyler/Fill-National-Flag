@@ -58,7 +58,7 @@ namespace MainScene.Managers
         /// <summary>
         /// 显示瓦片地图
         /// </summary>
-        private void ShowTile()
+        public void ShowTile()
         {
             var index = PuzzlePoint.x + 4 + (1 - PuzzlePoint.y) * 5 - 1;
             if (_puzzleFilled.Contains(index))
