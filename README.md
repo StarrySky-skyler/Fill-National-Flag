@@ -4,3 +4,5 @@
 
 [![MIT License](https://img.shields.io/badge/LICENSE-MIT-green.svg?style=for-the-badge)](https://github.com/StarrySky-skyler/Fill-National-Flag/blob/main/LICENSE)
 [![MIT License](https://img.shields.io/badge/Game_Engine-Unity2022.3.34f1-blue.svg?style=for-the-badge)](#)
+
+[![游戏演示](cover.png)](#)
