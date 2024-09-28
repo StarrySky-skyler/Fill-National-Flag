@@ -6,6 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+
+    public float inputX { get; set; }
+    public float inputY { get; set; }
     
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
@@ -19,8 +22,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        var inputX = Input.GetAxisRaw("Horizontal");
-        var inputY = Input.GetAxisRaw("Vertical");
         if (inputX != 0 || inputY != 0)
         {
             _isMove = true;
@@ -35,5 +36,51 @@ public class PlayerController : MonoBehaviour
         }
         
         _animator.SetBool("isMove", _isMove);
+    }
+    
+    /// <summary>
+    /// 移动按钮按下
+    /// </summary>
+    /// <param name="type">1上2下3左4右</param>
+    public void BtnMoveDown(int type)
+    {
+        switch (type)
+        {
+            case 1:
+                inputY = 1;
+                break;
+            case 2:
+                inputY = -1;
+                break;
+            case 3:
+                inputX = -1;
+                break;
+            case 4:
+                inputX = 1;
+                break;
+        }
+    }
+
+    /// <summary>
+    /// 移动按钮松开
+    /// </summary>
+    /// <param name="type">1上2下3左4右</param>
+    public void BtnMoveUp(int type)
+    {
+        switch (type)
+        {
+            case 1:
+                inputY = 0;
+                break;
+            case 2:
+                inputY = 0;
+                break;
+            case 3:
+                inputX = 0;
+                break;
+            case 4:
+                inputX = 0;
+                break;
+        }
     }
 }
